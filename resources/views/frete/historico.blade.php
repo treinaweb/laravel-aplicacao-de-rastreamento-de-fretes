@@ -46,7 +46,7 @@
                             {{ $frete->destino }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 py-1 rounded-full bg-green-500 text-white">
+                            <span class="px-2 py-1 rounded-full {{ $frete->status->pegarCorEtiqueta() }}">
                                 {{ $frete->status }}
                             </span>
                         </td>
@@ -94,7 +94,7 @@
                             {{ $frete->destino }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 py-1 rounded-full bg-green-500 text-white">
+                            <span class="px-2 py-1 rounded-full {{ $frete->status->pegarCorEtiqueta() }}">
                                 {{ $frete->status }}
                             </span>
                         </td>
