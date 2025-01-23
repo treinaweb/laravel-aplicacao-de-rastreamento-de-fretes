@@ -13,7 +13,7 @@ class HistoricoController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $telefone = $request->input('telefone', '');
+        $telefone = preg_replace('/\D/', '', $request->input('telefone', '')) ;
 
         $cliente = Cliente::where('telefone', $telefone)
                             ->with('enviados', 'recebidos')
