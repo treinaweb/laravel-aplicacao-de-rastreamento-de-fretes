@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Enums\FreteStatus;
+use App\Helpers;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreFreteRequest;
 use App\Models\Frete;
-use Illuminate\Http\Request;
 
 class FreteController extends Controller
 {
-    public function store(Request $request)
+    public function store(StoreFreteRequest $request)
     {
         $dados = $request->all();
-        $dados['codigo_rastreio'] = 'TESTEEEE123';
+        $dados['codigo_rastreio'] = Helpers::geraCodigoRastreioUnico();
         $dados['status'] = FreteStatus::EM_TRANSITO;
 
         $frete = Frete::create($dados);
