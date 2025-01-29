@@ -16,4 +16,15 @@ enum FreteStatus: string
             self::ENTREGUE => 'bg-green-100 text-green-800',
         };
     }
+
+    public static function fromName(string $name): ?FreteStatus
+    {
+        foreach (FreteStatus::cases() as $case) {
+            if ($case->name === $name) {
+                return $case;
+            }
+        }
+
+        return null;
+    }
 }
