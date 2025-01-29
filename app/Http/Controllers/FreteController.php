@@ -10,7 +10,7 @@ use App\Models\Frete;
 
 class FreteController extends Controller
 {
-    public function store(StoreFreteRequest $request)
+    public function store(StoreFreteRequest $request): Frete
     {
         $dados = $request->all();
         $dados['codigo_rastreio'] = Helpers::geraCodigoRastreioUnico();

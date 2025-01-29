@@ -7,10 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEtapaRequest;
 use App\Models\Etapa;
 use App\Models\Frete;
+use Illuminate\Http\JsonResponse;
 
 class EtapaController extends Controller
 {
-    public function store(StoreEtapaRequest $request)
+    public function store(StoreEtapaRequest $request): JsonResponse|Etapa
     {
         $frete = Frete::find($request->frete_id);
 

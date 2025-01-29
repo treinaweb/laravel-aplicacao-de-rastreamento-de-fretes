@@ -36,7 +36,7 @@
                             {{ $etapa->descricao }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            {{ $etapa->create_at }}
+                            {{ $etapa->created_at->format('d/m/Y h:i') }}
                         </td>
                     </tr>
                 @endforeach
