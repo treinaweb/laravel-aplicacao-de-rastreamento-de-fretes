@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreClienteRequest;
 use App\Models\Cliente;
-use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-    public function store(Request $request)
+    public function store(StoreClienteRequest $request)
     {
         $cliente = Cliente::create($request->all());
 
