@@ -23,13 +23,18 @@ class FreteResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('codigo_rastreio')
+                    ->label('Código de Rastreio')
+                    ->readOnly()
+                    ->default('Código Gerado Automaticamente')
+                    ->required(),
+                Forms\Components\TextInput::make('status')
+                    ->readOnly()
+                    ->default('Status padrão (Em Trânsito)')
+                    ->required(),
                 Forms\Components\TextInput::make('origem')
                     ->required(),
                 Forms\Components\TextInput::make('destino')
-                    ->required(),
-                Forms\Components\TextInput::make('codigo_rastreio')
-                    ->required(),
-                Forms\Components\TextInput::make('status')
                     ->required(),
                 Forms\Components\Select::make('remetente_id')
                     ->label('Remetente')
