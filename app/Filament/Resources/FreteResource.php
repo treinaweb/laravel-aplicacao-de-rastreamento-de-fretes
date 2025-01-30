@@ -31,14 +31,14 @@ class FreteResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('status')
                     ->required(),
-                Forms\Components\TextInput::make('remetente_id')
+                Forms\Components\Select::make('remetente_id')
                     ->label('Remetente')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('destinatario_id')
+                    ->relationship('remetente', 'nome')
+                    ->required(),
+                Forms\Components\Select::make('destinatario_id')
                     ->label('Destinatário')
-                    ->required()
-                    ->numeric(),
+                    ->relationship('destinatario', 'nome')
+                    ->required(),
             ]);
     }
 
@@ -54,11 +54,11 @@ class FreteResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('remetente_id')
+                Tables\Columns\TextColumn::make('remetente.nome')
                     ->label('Remetente')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('destinatario_id')
+                Tables\Columns\TextColumn::make('destinatario.nome')
                     ->label('Destinatário')
                     ->numeric()
                     ->sortable(),

@@ -18,4 +18,14 @@ class Frete extends Model
     {
         return $this->hasMany(Etapa::class);  
     }
+
+    public function remetente()
+    {
+        return $this->belongsTo(Cliente::class);
+    }
+
+    public function destinatario()
+    {
+        return $this->belongsTo(Cliente::class);
+    }
 }
