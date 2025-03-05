@@ -1,6 +1,6 @@
 ## Projeto desenvolvido na TreinaWeb Cursos
 
-Desenvolvido no projeto prático - Laravel - Aplicação de rastreamento de fretes
+Desenvolvido no projeto prático: Laravel - Aplicação de rastreamento de fretes
 
 ### Instalando o projeto
 
